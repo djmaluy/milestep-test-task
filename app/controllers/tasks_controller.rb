@@ -13,8 +13,8 @@ class TasksController < ApplicationController
 
   # POST /Tasks
   def create
-    @task = user.tasks.build(task_params)
-    if @task.save
+    @task = user.tasks.create(task_params)
+    if @task
       render json: @task, status: :created
     else
       render json: { error: "Unable to create Task" }, status: :bad_request
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
 
   # PUT /Tasks/:id
   def update
-    @task = user.tasks.find(params[:id])
+    @task = user.tasks.find_by(id: params[:id])
     if @task
       @task.update(task_params)
       render json: { message: "Task sucessfully updated" }, status: :ok
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
   # DELETE /Tasks/:id
   def destroy
-    @task = user.tasks.find(params[:id])
+    @task = user.tasks.find_by(id: params[:id])
     if @task
       @task.destroy
       render json: { message: "Task successfully deleted" }, status: :ok
@@ -46,7 +46,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit!
+    params.require(:id).permit!
   end
 
   def find_task

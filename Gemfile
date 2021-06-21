@@ -18,7 +18,8 @@ gem 'jwt', '~> 1.5', '>= 1.5.4'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use Active Storage variant
+gem 'webpacker', '~> 4.3.x'
+gem 'pry', '~> 0.14.1'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
