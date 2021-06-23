@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 
   # GET all Tasks
   def index
+    # binding.pry
     render json: user.tasks
   end
 
@@ -46,7 +47,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:id).permit!
+    params.require(:task).permit(:title, :description, :priority, :due_date, :is_done)
   end
 
   def find_task
@@ -54,6 +55,7 @@ class TasksController < ApplicationController
   end
 
   def user
-    @user ||= User.find(params[:user_id])
+    # binding.pry
+    @user ||= User.find_by(params[:user_id])
   end
 end

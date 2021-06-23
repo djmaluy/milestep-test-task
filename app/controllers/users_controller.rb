@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
 
   # REGISTER
+  # need refactoring
   def create
     @user = User.create(user_params)
     if @user.valid?
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
 
 
   def auto_login
-
+    
     token = request.headers["Authenticate"]
     @user = User.find(decode(token)["user_id"])
 
