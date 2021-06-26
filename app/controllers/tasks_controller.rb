@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :update, :destroy]
+  before_action :find_task, only: [:show, :update]
 
   # GET all Tasks
   def index
@@ -33,15 +33,8 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /Tasks/:id
-  def destroy
-    @task = user.tasks.find_by(id: params[:id])
-    if @task
-      @task.destroy
-      render json: { message: "Task successfully deleted" }, status: :ok
-    else
-      render json: { error: "Unable to delete Task" }, status: :bad_request
-    end
+  def destroy_all
+    user.tasks.where(id: params[:ids]).destroy_all
   end
 
   private
@@ -51,11 +44,10 @@ class TasksController < ApplicationController
   end
 
   def find_task
-    @task = Task.find(params[:id])
+    @task = user.tasks.where(params[:id])
   end
 
   def user
-    # binding.pry
     @user ||= User.find_by(params[:user_id])
   end
 end
