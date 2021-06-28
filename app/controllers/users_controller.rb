@@ -15,24 +15,27 @@ class UsersController < ApplicationController
 
   # LOGGING IN
   def login
-    @user = User.find_by(email: params[:email])
+    
+    user = User.find_by(email: params[:email])
 
-    if @user && @user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
+      payload = {user_id: user.id}
+      token = encode(payload)
+      render json: { user: user, token: token }
       
-      token = encode({ user_id: @user.id })
-      render json: { user: @user, token: token }
     else
       render json: { error: "User not found" }
     end
   end
 
 
-  def auto_login
-    
+  def token_authenticate
+   
     token = request.headers["Authenticate"]
-    @user = User.find(decode(token)["user_id"])
+    user = User.find(decode(token)["user_id"])
 
-    render json: @user
+    render json: user
+    
   end
   
   private

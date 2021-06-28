@@ -3,7 +3,6 @@ class TasksController < ApplicationController
 
   # GET all Tasks
   def index
-    # binding.pry
     render json: user.tasks
   end
 
@@ -14,8 +13,10 @@ class TasksController < ApplicationController
 
   # POST /Tasks
   def create
-    @task = user.tasks.create(task_params)
-    if @task
+
+    task = user.tasks.create(task_params)
+   
+    if task
       render json: @task, status: :created
     else
       render json: { error: "Unable to create Task" }, status: :bad_request
@@ -48,6 +49,7 @@ class TasksController < ApplicationController
   end
 
   def user
-    @user ||= User.find_by(params[:user_id])
+
+     User.find_by(params[:user_id])
   end
 end
