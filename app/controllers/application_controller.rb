@@ -1,23 +1,18 @@
 class ApplicationController < ActionController::API
+  
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found!
 
-	# include ::ActionController::Cookies
+  # skip_before_action :verify_authenticity_token
+
+  include ActionController::Cookies
+  
+  include WithSession
+
+ private
+
+ def not_found!
+   head(:not_found)
+ end
  
-  def secret_key
-    's3cr3t'
-  end
 
-  def encode(payload)
-    JWT.encode(payload, secret_key, 'HS256')
-  end
-
-  def decode(token)
-      JWT.decode(token, 's3cr3t', true, { algorithm: 'HS256'})[0]
-  end
-
-
- 
-  # def authenticate_user
-  #   jwt = cookies.signed[:jwt]
-  #   decode_jwt(jwt)
-  # end
 end
