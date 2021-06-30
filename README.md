@@ -1,24 +1,35 @@
-# README
+### Installation:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- **To clone the project**
 
-Things you may want to cover:
+```
+git@github.com:djmaluy/milestep-test-task.git
+git@github.com:djmaluy/milestep-test-frontend.git
+```
 
-* Ruby version
+- **Go to the folder**
 
-* System dependencies
+```
+cd milestep-test-task  and execute the command:
 
-* Configuration
+bundle install
+rails s
+```
 
-* Database creation
+- **Go to the folder**
 
-* Database initialization
+```
+cd milestep-test-frontend  and execute the command:
 
-* How to run the test suite
+npm install
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
+### Run the application:
 
-* ...
+- **For quick application run use this command**
+
+```
+npm start
+
+```

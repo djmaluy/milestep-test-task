@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 
   # GET all Tasks
   def index
-    render json: user.tasks
+     render json: current_user.tasks
+    
   end
 
   # GET /Tasks/:id
@@ -14,7 +15,7 @@ class TasksController < ApplicationController
   # POST /Tasks
   def create
 
-    task = user.tasks.create(task_params)
+    task = current_user.tasks.create(task_params)
    
     if task
       render json: @task, status: :created
@@ -25,7 +26,7 @@ class TasksController < ApplicationController
 
   # PUT /Tasks/:id
   def update
-    @task = user.tasks.find_by(id: params[:id])
+    @task = current_user.tasks.find_by(id: params[:id])
     if @task
       @task.update(task_params)
       render json: { message: "Task sucessfully updated" }, status: :ok
@@ -35,7 +36,7 @@ class TasksController < ApplicationController
   end
 
   def destroy_all
-    user.tasks.where(id: params[:ids]).destroy_all
+    current_user.tasks.where(id: params[:ids]).destroy_all
   end
 
   private
@@ -50,6 +51,8 @@ class TasksController < ApplicationController
 
   def user
 
-     User.find_by(params[:user_id])
+    @user||= User.find_by(params[:user_id])
   end
+
+  
 end

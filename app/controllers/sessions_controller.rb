@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   # before_action :authenticate!, only: %i[show destroy]
 
   def show
+
     return render json: { user: { current_user: current_user } } if current_user
     render json: { user: { current_user: nil } }
   end
