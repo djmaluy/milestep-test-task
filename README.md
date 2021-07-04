@@ -17,11 +17,11 @@ yarn install
 
 ```
 
-```
+
 
 ### Run the application:
 
- **For quick application run use this command**
+- **For quick application run use this command**
 
 ```
 rails s
