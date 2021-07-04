@@ -18,6 +18,8 @@ gem 'jwt', '~> 1.5', '>= 1.5.4'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+
+
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'
 # gem 'image_processing', '~> 1.2'
@@ -32,6 +34,7 @@ gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
 end
 
 group :development do

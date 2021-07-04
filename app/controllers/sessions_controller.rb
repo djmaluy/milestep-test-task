@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
 
   def show
 
-    return render json: { user: { current_user: current_user } } if current_user
-    render json: { user: { current_user: nil } }
+    return render json: current_user if current_user
+    
   end
 
   def create
