@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do  
 	allow do
-	    origins 'http://localhost:3001'
+	    origins 'milestep-test-frontend.herokuapp.com'
 
 	    resource '*',
 	      headers: :any,
@@ -16,4 +16,4 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 	      
   end
 end
-Rails.application.config.hosts << 'localhost:3001'
+# Rails.application.config.hosts << 'localhost:3001'
