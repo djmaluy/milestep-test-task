@@ -9,7 +9,7 @@ module WithSession
   included do
 
     def secret
-        Rails.application.credentials.secret_key_base || 'dalkdlas'
+        Rails.application.credentials.secret_key_base || Rails.application.credentials.secret
     end
 
     def assign_jwt_cookies(user)
@@ -19,7 +19,7 @@ module WithSession
     end
 
     def current_user
-      
+
       session = cookies.signed[:session]
       return unless session
       decoded = Jwt::DecryptionService.new(session).decrypt!
@@ -33,6 +33,6 @@ module WithSession
     def unauthorized!
       render json: { error: 'Unauthorized' }, status: :unauthorized
     end
-    
+
   end
 end

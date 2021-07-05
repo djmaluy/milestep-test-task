@@ -18,7 +18,7 @@ gem 'jwt', '~> 1.5', '>= 1.5.4'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
 
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'

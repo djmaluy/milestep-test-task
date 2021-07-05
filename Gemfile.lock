@@ -69,6 +69,7 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
     erubi (1.10.0)
     ffi (1.15.3)
     globalid (0.4.2)
@@ -182,6 +183,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
+  dotenv (~> 2.7, >= 2.7.6)
   jwt (~> 1.5, >= 1.5.4)
   listen (~> 3.3)
   pg (~> 1.1)
