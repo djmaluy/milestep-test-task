@@ -23,8 +23,7 @@ class UsersController < ApplicationController
     decoded = Jwt::DecryptionService.new(token_params[:token]).decrypt!
     user = User.find(decoded['sub']['user_id'])
     if user
-        user.update(email_confirmed: true)
-        
+      user.update(email_confirmed: true)  
     end
 
     return render json: user if user
