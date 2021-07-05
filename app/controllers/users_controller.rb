@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   
 
   def create
-    @user = User.create(user_params)
-    if @user.save
-      send_confirm_email(@user)
+    user = User.create(user_params)
+    if user.save
+      send_confirm_email(user)
             
     else
       render json: "Something went wrong"
@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   end
 
   def send_confirm_email(user)
+    
     token = Jwt::EncryptionService.new(user_id: user.id).token
-    UserMailer.registration_confirmation(@user, token).deliver_now!
+    UserMailer.registration_confirmation(user, token).deliver_now!
     
     render json: user, status: :created
   end
