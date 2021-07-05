@@ -29,7 +29,7 @@ module Jwt
     end
 
     def secret
-      Rails.application.credentials.secret_key_base
+      Rails.application.credentials.secret_key_base || Rails.application.credentials.secret
     end
   end
 end
