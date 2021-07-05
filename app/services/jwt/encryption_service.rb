@@ -3,7 +3,7 @@
 require 'digest'
 
 module Jwt
-  
+
   class EncryptionService
     SIGNING_ALGORITHM = 'HS256'
 
@@ -12,6 +12,9 @@ module Jwt
     end
 
     def token
+      p payload
+      p secret
+      p '-----------'
       JWT.encode(payload, secret, SIGNING_ALGORITHM)
     end
 
