@@ -3,11 +3,11 @@ class TasksController < ApplicationController
 
   # GET all Tasks
   def index
-    if current_user
+    # if current_user
       render json: current_user.tasks 
-    else 
-      render json: "You are not authorize"
-    end
+    # else 
+    #   render json: "You are not authorize"
+    # end
   end
 
   # GET /Tasks/:id
