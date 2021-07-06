@@ -15,17 +15,15 @@ module WithSession
     def assign_jwt_cookies(user)
       @user = user
       token = Jwt::EncryptionService.new(user_id: @user.id).token
-      p token
-      p '================'
-      p user
+     
       time = 24.hours.from_now
       cookies.signed[:session] = { value: token, expires: time, httponly: Rails.env.production? }
-      p cookies.signed[:session] 
-      p '========================='
+      
     end
 
     def current_user
       session = cookies.signed[:session]
+      p session
       return unless session
       decoded = Jwt::DecryptionService.new(session).decrypt!
       current_user ||= User.find(decoded['sub']['user_id'])
