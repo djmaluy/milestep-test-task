@@ -55,7 +55,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "milestep_test_task_production"
 
- 
+
 
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = {
@@ -68,18 +68,18 @@ Rails.application.configure do
   # }
   # config.action_mailer.raise_delivery_errors = true
 
-  # config.action_mailer.default_url_options = { host: 'https://milestep-test-task-backend.herokuapp.com' }
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.smtp_settings = {
-  #   :user_name => ENV['GMAIL_LOGIN'],
-  #   :password => ENV['GMAIL_PASSWORD'],
-  #   :domain => 'stridecatcher.herokuapp.com',
-  #   :address => 'smtp.sendgrid.net',
-  #   :port => ENV['PORT'],
-  #   :authentication => :plain,
-  #   :enable_starttls_auto => true
-  # }
+  config.action_mailer.default_url_options = { host: 'https://milestep-test-task-backend.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['GMAIL_LOGIN'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :domain => 'stridecatcher.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => ENV['PORT'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
   # config.action_mailer.default_url_options = {host: "#{domain_name}"}
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.perform_deliveries = true
