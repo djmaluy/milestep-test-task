@@ -14,6 +14,8 @@ module WithSession
 
     def assign_jwt_cookies(user)
       token = Jwt::EncryptionService.new(user_id: user.id).token
+      p token
+      p '================'
       time = 24.hours.from_now
       cookies.signed[:session] = { value: token, expires: time, httponly: Rails.env.production? }
     end
