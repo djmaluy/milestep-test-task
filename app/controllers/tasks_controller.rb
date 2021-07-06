@@ -1,13 +1,10 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :update]
+  before_action :authenticate! only: [:index]
 
   # GET all Tasks
   def index
-    # if current_user
       render json: current_user.tasks 
-    # else 
-    #   render json: "You are not authorize"
-    # end
   end
 
   # GET /Tasks/:id
