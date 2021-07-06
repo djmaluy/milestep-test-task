@@ -1,6 +1,5 @@
 class UserMailer < ApplicationMailer
 
-
   def registration_confirmation(user, token)
     @user = user
   	@url  = ENV["CLIENT_URL"] + '/confirmation_email/' + token.to_s

@@ -3,8 +3,11 @@ class TasksController < ApplicationController
 
   # GET all Tasks
   def index
-     render json: current_user.tasks
-    
+    if current_user.present? 
+      render json: current_user.tasks 
+    else 
+      render json: "You are not authorize"
+    end
   end
 
   # GET /Tasks/:id
@@ -15,7 +18,7 @@ class TasksController < ApplicationController
   # POST /Tasks
   def create
 
-    task = current_user.tasks.create(task_params)
+    task = current_user.tasks.create(task_params) if current_user
    
     if task
       render json: @task, status: :created
