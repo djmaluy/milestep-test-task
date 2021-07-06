@@ -13,7 +13,8 @@ module WithSession
     # end
 
     def assign_jwt_cookies(user)
-      token = Jwt::EncryptionService.new(user_id: user.id).token
+      @user = user
+      token = Jwt::EncryptionService.new(user_id: @user.id).token
       p token
       p '================'
       time = 24.hours.from_now
