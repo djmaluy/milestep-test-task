@@ -55,7 +55,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "milestep_test_task_production"
 
-  config.hosts << 'milestep-frontend.herokuapp.com'
+  # config.hosts << 'milestep-frontend.herokuapp.com'
 
   config.action_mailer.default_url_options = { host: 'https://milestep-test-task-backend.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
