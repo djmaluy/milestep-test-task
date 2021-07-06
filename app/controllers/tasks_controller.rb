@@ -19,7 +19,10 @@ class TasksController < ApplicationController
   def create
 
     task = current_user.tasks.create(task_params) if current_user
-   
+    p task
+    p current_user
+    p '================='
+
     if task
       render json: @task, status: :created
     else
