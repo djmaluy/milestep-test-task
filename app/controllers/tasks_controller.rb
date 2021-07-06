@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :update]
-  before_action :authenticate! only: [:index]
+  before_action :authenticate!, only: [:index]
 
   # GET all Tasks
   def index
@@ -16,10 +16,6 @@ class TasksController < ApplicationController
   def create
 
     task = current_user.tasks.create(task_params)
-    p task
-    p current_user
-    p '================='
-
     if task
       render json: @task, status: :created
     else
@@ -53,9 +49,7 @@ class TasksController < ApplicationController
   end
 
   def user
-
     @user||= User.find_by(params[:user_id])
   end
-
   
 end
