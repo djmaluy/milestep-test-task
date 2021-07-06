@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.save
       send_confirm_email(user)
+      render json: user
     else
       render json: "Something went wrong"
     end
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
     token = Jwt::EncryptionService.new(user_id: @user.id).token
     UserMailer.registration_confirmation(user, token).deliver_now!
 
+    render json: user, status: :created
   end
 
 
