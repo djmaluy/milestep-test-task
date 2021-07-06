@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   end
 
   def send_confirm_email(user)
-   
-    token = Jwt::EncryptionService.new(user_id: user.id).token
+    @user = user
+    token = Jwt::EncryptionService.new(user_id: @user.id).token
     UserMailer.registration_confirmation(user, token).deliver_now!
 
     render json: user, status: :created
