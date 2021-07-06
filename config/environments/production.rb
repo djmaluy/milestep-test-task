@@ -74,9 +74,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name => ENV['GMAIL_LOGIN'],
     :password => ENV['GMAIL_PASSWORD'],
-    :domain => 'stridecatcher.herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => ENV['PORT'],
+    :domain => 'milestep-test-task-backend.herokuapp.com',
+    :address => 'smtp.gmail.com',
+    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
