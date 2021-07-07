@@ -32,7 +32,7 @@ module WithSession
     end
 
     def unauthorized!
-      render json: { error: 'Unauthorized' }, status: :unauthorized
+      render json: { error: 'You are not authorized!!!' }, status: :unauthorized
     end
 
   end
