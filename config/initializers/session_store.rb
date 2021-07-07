@@ -3,5 +3,3 @@
 #   same_site: ENV["SESSION_COOKIE_SAMESITE"], 
 #   secure: ENV['SESSION_COOKIE_SECURE']
 
-# app.config['SESSION_COOKIE_SAMESITE'] = 'None'
-# app.config['SESSION_COOKIE_SECURE'] = True
