@@ -52,8 +52,8 @@ module MilestepTestTask
     # config.middleware.use ActionDispatch::Cookies
     # config.middleware.use ActionDispatch::Session::CookieStore,
     #          key: '_cookie_name', path: '/', same_site: :none, secure: true
-    config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, 
-    :key => ENV["SECRET_KEY_BASE"], same_site: :none, secure: :true, expire_after: 14.days, httponly: true
+    # config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, 
+    # :key => ENV["SECRET_KEY_BASE"], same_site: :none, secure: :true, expire_after: 14.days, httponly: true
 
 
     config.before_configuration do
