@@ -49,6 +49,8 @@ module MilestepTestTask
     # Skip views, helpers and assets when generating a new resource.
     # config.middleware.use ActionDispatch::Cookies
     config.api_only = false
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     # config.middleware.use ActionDispatch::Cookies
     # config.middleware.use ActionDispatch::Session::CookieStore,
     #          key: '_cookie_name', path: '/', same_site: :none, secure: true
