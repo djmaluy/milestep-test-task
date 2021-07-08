@@ -10,7 +10,7 @@ module Jwt
     end
 
     def decrypt!
-      JWT.decode(@token, secret).first
+      JWT.decode(@token, ENV["SECRET_KEY_BASE"]).first
     end
 
     private

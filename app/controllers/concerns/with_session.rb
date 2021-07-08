@@ -8,9 +8,9 @@ module WithSession
 
   included do
 
-    def secret
-        Rails.application.credentials.secret_key_base 
-    end
+    # def secret
+    #     Rails.application.credentials.secret_key_base || Rails.application.credentials.secret
+    # end
 
     def assign_jwt_cookies(user)
       @user = user

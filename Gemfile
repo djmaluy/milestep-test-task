@@ -19,7 +19,7 @@ gem 'jwt', '~> 1.5', '>= 1.5.4'
 gem 'bcrypt', '~> 3.1.7'
 # gem 'spring', '~> 2.1', '>= 2.1.1'
 gem 'dotenv', '~> 2.7', '>= 2.7.6'
-#gem 'rails_same_site_cookie', '~> 0.1.8'
+gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'
 # gem 'image_processing', '~> 1.2'
@@ -30,7 +30,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+<<<<<<< HEAD
 gem 'rails_same_site_cookie', '~> 0.1.0'
+=======
+>>>>>>> parent of dabecc2... fixed ruby version, session cookies
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
