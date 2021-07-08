@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
@@ -19,7 +19,7 @@ gem 'jwt', '~> 1.5', '>= 1.5.4'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'dotenv', '~> 2.7', '>= 2.7.6'
-gem 'rails_same_site_cookie', '~> 0.1.8'
+#gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'
 # gem 'image_processing', '~> 1.2'
@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
-
+gem 'rails_same_site_cookie', '~> 0.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
