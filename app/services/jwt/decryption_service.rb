@@ -10,13 +10,13 @@ module Jwt
     end
 
     def decrypt!
-      JWT.decode(@token, ENV["SECRET_KEY_BASE"]).first
+      JWT.decode(@token, secret).first
     end
 
     private
 
     def secret
-      Rails.application.credentials.secret_key_base
+      Rails.application.credentials.secret
     end
     
   end

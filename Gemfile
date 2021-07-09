@@ -30,10 +30,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
-<<<<<<< HEAD
-gem 'rails_same_site_cookie', '~> 0.1.0'
-=======
->>>>>>> parent of dabecc2... fixed ruby version, session cookies
+# gem 'rails_same_site_cookie', '~> 0.1.0'
+
+gem 'listen', '~> 3.1.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,7 +42,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.3'
+  # gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
