@@ -9,7 +9,8 @@ module WithSession
   included do
 
     def secret
-        Rails.application.credentials.secret
+        # Rails.application.credentials.secret
+        ENV["SECRET"]
     end
 
     def assign_jwt_cookies(user)
