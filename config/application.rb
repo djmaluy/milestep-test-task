@@ -30,7 +30,7 @@ module MilestepTestTask
     config.middleware.use ActionDispatch::Session::CookieStore
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    Rails.application.config.hosts << 'milestep-frontend.herokuapp.com'
+    config.hosts << "milestep-test-task-backend.herokuapp.com"
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.action_mailer.default_url_options = { host: 'https://milestep-test-task-backend.herokuapp.com' }
