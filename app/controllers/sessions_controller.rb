@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:body][:email])
-    if user&.authenticate(params[:password])
+    if user&.authenticate(params[:body][:password])
       assign_jwt_cookies(user) 
       return render json: user
     end
