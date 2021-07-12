@@ -17,7 +17,7 @@ module WithSession
       @user = user
       token = Jwt::EncryptionService.new(user_id: @user.id).token
       time = 24.hours.from_now
-      cookies.signed[:session] = { value: token, expires: time, :same_site => :none, :secure => :true }
+      cookies.signed[:session] = { value: token, expires: time }
     end
 
     def current_user
