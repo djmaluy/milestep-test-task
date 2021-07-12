@@ -24,7 +24,7 @@ module WithSession
       session = cookies.signed[:session]
       return unless session
       decoded = Jwt::DecryptionService.new(session).decrypt!
-      current_user ||= User.find(decoded['sub']['user_id'])
+      @current_user ||= User.find(decoded['sub']['user_id'])
     end
 
     def authenticate!

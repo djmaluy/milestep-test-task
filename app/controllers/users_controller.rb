@@ -3,12 +3,9 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    if user.save
-      send_confirm_email(user)
+    return  send_confirm_email(user) if user.save
       # render json: user
-    else
-      render json: "Something went wrong"
-    end
+      render json: user.errors, status: :unprocessable_entity
   end
 
   def send_confirm_email(user)
