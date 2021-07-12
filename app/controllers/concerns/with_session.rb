@@ -19,7 +19,7 @@ module WithSession
       time = 24.hours.from_now
       cookies.signed[:session] = { value: token, expires: time, httponly: true, 
                                     secure: true, same_site: "none", 
-                                    domain: ENV["CLIENT_DOMAIN"] }
+                                    domain: ".herokuapp.com" }
     end
 
     def current_user
