@@ -18,7 +18,7 @@ module WithSession
       token = Jwt::EncryptionService.new(user_id: @user.id).token
       time = 24.hours.from_now
       cookies.signed[:session] = { value: token, expires: time, httponly: true, 
-                                    secure: true, same_site: ENV["SESSION_COOKIE_SAMESITE"], 
+                                    secure: true, same_site: None, 
                                     domain: ".herokuapp.com" }
     end
 
