@@ -18,7 +18,7 @@ module WithSession
       token = Jwt::EncryptionService.new(user_id: @user.id).token
       time = 24.hours.from_now
       cookies.signed[:session] = { value: token, expires: time, httponly: true, 
-                                   same_site: :none, secure: true, domain: :all }
+                                   same_site: :none, secure: true, domain: "https://milestep-test-task-backend.herokuapp.com" }
     end
 
     def current_user
