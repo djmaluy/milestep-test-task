@@ -8,6 +8,16 @@ class UsersController < ApplicationController
       render json: user.errors, status: :unprocessable_entity
   end
 
+  def update
+    @user = current_user
+    if @user
+      @user.update(updated_params)
+      render json: { message: "User sucessfully updated" }, status: :ok
+    else
+      render json: { error: "Unable to update user" }, status: :bad_request
+    end
+  end
+
   def send_confirm_email(user)
     @user = user
     token = Jwt::EncryptionService.new(user_id: @user.id).token
@@ -33,6 +43,9 @@ class UsersController < ApplicationController
 
 
   private
+  def updated_params
+    params.require(:user).permit(:first_name, :last_name, :phone, :address)
+  end
 
   def token_params
     params.require(:user).permit(:token)

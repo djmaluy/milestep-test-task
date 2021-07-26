@@ -22,7 +22,7 @@ gem 'dotenv', '~> 2.7', '>= 2.7.6'
 gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'
-# gem 'rspec'
+
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -39,7 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
-  
+
 end
 
 group :development do

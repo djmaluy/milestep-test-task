@@ -9,15 +9,15 @@ module WithSession
   included do
 
     def secret
-        # Rails.application.credentials.secret
-        ENV["SECRET"]
+        Rails.application.credentials.secret
+        # ENV["SECRET"]
     end
 
     def assign_jwt_cookies(user)
       @user = user
       token = Jwt::EncryptionService.new(user_id: @user.id).token
       time = 24.hours.from_now
-      cookies.signed[:session] = { value: token, expires: time, httponly: true, 
+      cookies.signed[:session] = { value: token, expires: time, httponly: true,
                                    same_site: :none, secure: true }
     end
 

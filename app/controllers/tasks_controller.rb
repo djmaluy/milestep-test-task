@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   # GET all Tasks
   def index
-      render json: current_user.tasks 
+      render json: current_user.tasks
   end
 
   # GET /Tasks/:id
@@ -51,5 +51,5 @@ class TasksController < ApplicationController
   def user
     @user||= User.find_by(params[:user_id])
   end
-  
+
 end
