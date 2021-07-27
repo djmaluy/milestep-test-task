@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  default_url_options :host => "localhost:3000"
+
   resource :users, only: [:create, :update]
 
   resource :sessions, only: %i[create destroy]

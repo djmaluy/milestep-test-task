@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+      @user = current_user
     if @user
       @user.update(updated_params)
-      render json: { message: "User sucessfully updated" }, status: :ok
+      render json: @user
     else
       render json: { error: "Unable to update user" }, status: :bad_request
     end
@@ -43,8 +43,10 @@ class UsersController < ApplicationController
 
 
   private
+
   def updated_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :address)
+  
+    params.permit(:first_name, :last_name, :phone, :address, :image)
   end
 
   def token_params
