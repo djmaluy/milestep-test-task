@@ -5,6 +5,6 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :tasks,  dependent: :destroy
-
+  self.per_page = 5
   has_one_attached :image
 end
