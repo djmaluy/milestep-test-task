@@ -16,8 +16,8 @@ module Jwt
     private
 
     def secret
-      Rails.application.credentials.secret
-      # ENV["SECRET"]
+      # Rails.application.credentials.secret
+      ENV["SECRET"]
     end
 
   end
