@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :update]
-  before_action :authenticate!, only: [:index]
+  # before_action :authenticate!, only: [:index]
 
   # GET all Tasks
   def index
