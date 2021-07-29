@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resource :users, only: [:create, :update]
 
+  get '/users', :to => 'users#index'
+  
   resource :sessions, only: %i[create destroy]
 
   get '/current_user', :to => 'sessions#show'
