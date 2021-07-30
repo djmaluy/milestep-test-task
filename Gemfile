@@ -24,7 +24,7 @@ gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'
 
-# gem 'image_processing', '~> 1.2'
+gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
