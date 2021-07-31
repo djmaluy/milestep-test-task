@@ -23,6 +23,7 @@ gem 'dotenv', '~> 2.7', '>= 2.7.6'
 gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'webpacker', '~> 4.3.x'
 gem 'pry', '~> 0.14.1'
+gem 'route_downcaser'
 
 gem "aws-sdk-s3", require: false
 
