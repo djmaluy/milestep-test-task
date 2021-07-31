@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :tasks,  dependent: :destroy
   self.per_page = 5
   has_one_attached :image
+
+  def image_url
+    if image.attached?
+      #avatar.service_url
+      S3_BUCKET.object(image.key).public_url
+    end
+  end
+
 end
