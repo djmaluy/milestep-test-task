@@ -4,7 +4,7 @@ class UsersController < ApplicationController
    @users = User.all.paginate(page: params[:page])
    render json: {
       users: @users,
-      pages: @users.total_pages
+      pages: @users.total_pages,
     }
   end
 
@@ -52,7 +52,6 @@ class UsersController < ApplicationController
   private
 
   def updated_params
-
     params.permit(:first_name, :last_name, :phone, :address, :image)
   end
 
