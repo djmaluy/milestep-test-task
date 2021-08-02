@@ -28,10 +28,10 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Don't care if the mailer can't send.
- 
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: "localhost:3001" }
@@ -43,10 +43,10 @@ Rails.application.configure do
     user_name:             Rails.application.credentials.user_name,
     password:              Rails.application.credentials.password,
     authentication:       'plain',
-    enable_starttls_auto: true  
+    enable_starttls_auto: true
   }
 
-  
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

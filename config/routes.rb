@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post 'confirm_email', :to => 'users#confirm_email'
 
-  post '/api/presigned_url', :to => 'api/direct_upload#create'
+  post '/presigned_url', to: 'direct_upload#create'
 
   delete "/tasks", to: "tasks#destroy_all"
 

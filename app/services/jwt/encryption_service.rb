@@ -26,7 +26,6 @@ module Jwt
     end
 
     def secret
-      # Rails.application.credentials.secret
       ENV["SECRET"]
     end
   end

@@ -9,7 +9,6 @@ module WithSession
   included do
 
     def secret
-        # Rails.application.credentials.secret
         ENV["SECRET"]
     end
 
