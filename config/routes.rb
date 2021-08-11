@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resource :users, only: [:create, :update]
 
+  get '/categories', :to => 'categories#index'
+
   get '/users', :to => 'users#index'
 
   resource :sessions, only: %i[create destroy]
