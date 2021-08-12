@@ -1,11 +1,11 @@
 class TaskSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :title, :description, :priority, :due_date, :is_done, :checked, :some_file
+  attributes :id, :title, :description, :priority, :due_date, :is_done, :checked, :attachment
 
-  def some_file
-    if object.some_file.attached?
+  def attachment
+    if object.attachment.attached?
       {
-        pdf: rails_blob_url(object.some_file)
+        pdf: rails_blob_url(object.attachment)
       }
     end
   end
