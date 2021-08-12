@@ -25,13 +25,13 @@ class TasksController < ApplicationController
 
   # PUT /Tasks/:id
   def update
-    some_file = params[:pdf]
+    attachment = params[:pdf]
     params = updating_task_params.except(:pdf)
     @task = current_user.tasks.find_by(id: params[:id])
     if @task
       @task.update(updating_task_params)
-      @task.some_file.attach(some_file) if some_file.present? && !!@task
-      render json: @task.as_json(root: false, methods: :some_file_url).except('updated_at')
+      @task.attachment.attach(attachment) if attachment.present?
+      render json: @task.as_json(root: false, methods: :attachment_url).except('updated_at')
 
     else
       render json: { error: "Unable to update Task" }, status: :bad_request
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
   private
 
   def updating_task_params
-    params.permit(:id, :title, :description, :priority, :due_date, :some_file)
+    params.permit(:id, :title, :description, :priority, :due_date, :attachment, :is_done)
   end
 
   def task_params
